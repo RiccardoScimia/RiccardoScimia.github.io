@@ -1,360 +1,103 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Studio di architettura e design impegnato nella sostenibilità e nell'efficienza energetica. Progetti innovativi per un futuro più verde.">
-    <title>Studio di Architettura e Design Sostenibile</title>
+    <title>Studio di Architettura e Design</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Reset delle impostazioni di base */
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
         }
-
-        /* Colori di base */
-        :root {
-            --primary-color: #1c4d36; /* Verde scuro per la sostenibilità */
-            --secondary-color: #f0f0f0; /* Colore chiaro per lo sfondo */
-            --accent-color: #ffffff; /* Colore chiaro per il testo */
-            --background-color: #121212; /* Nero per lo sfondo principale */
-            --hover-color: #4a7c55; /* Verde chiaro per hover */
-            --input-bg-color: #333333; /* Grigio scuro per i campi di input */
-            --border-color: #444444; /* Colore dei bordi degli input */
-        }
-
-        /* Header */
         header {
-            background-color: var(--background-color);
-            color: var(--accent-color);
+            background: #333;
+            color: white;
             padding: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            font-size: 24px;
         }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         nav ul {
-            list-style-type: none;
+            list-style: none;
+            padding: 0;
+            background: #555;
+            margin: 0;
             display: flex;
+            justify-content: center;
         }
-
         nav ul li {
-            margin: 0 15px;
+            padding: 15px;
         }
-
         nav ul li a {
-            color: var(--accent-color);
+            color: white;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
+            font-size: 18px;
         }
-
-        nav ul li a:hover {
-            color: var(--hover-color);
-        }
-
-        /* Sezione Hero */
-        .hero {
-            background: url('images/hero-bg.jpg') no-repeat center center/cover;
-            color: var(--accent-color);
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-        }
-
-        .cta-button {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: var(--hover-color);
-        }
-
-        /* Sezione Chi Siamo */
-        .about {
-            background-color: var(--background-color);
-            color: var(--accent-color);
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #bbb;
-        }
-
-        /* Sezione Progetti */
-        .projects {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: var(--secondary-color);
-        }
-
-        .projects h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-        }
-
-        .project-gallery {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .project-item {
-            width: 30%;
-            background-color: white;
+        section {
+            padding: 40px;
+            background: white;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
         }
-
-        .project-item:hover {
-            transform: scale(1.05);
-        }
-
-        .project-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .project-item h3 {
-            font-size: 1.8rem;
-            padding: 20px;
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-        }
-
-        .project-item p {
-            padding: 20px;
-            font-size: 1rem;
-            color: #555;
-        }
-
-        /* Sezione Valori */
-        .values {
-            background-color: var(--background-color);
-            padding: 60px 20px;
-            color: var(--accent-color);
-        }
-
-        .values h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-
-        .values-list {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-        }
-
-        .value-item {
-            background-color: #333333;
-            padding: 20px;
-            width: 30%;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .value-item:hover {
-            transform: scale(1.05);
-            background-color: var(--primary-color);
-        }
-
-        .value-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .value-item p {
-            font-size: 1rem;
-            color: #ccc;
-        }
-
-        /* Sezione Contatti */
-        .contact {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: var(--background-color);
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact input,
-        .contact textarea {
-            padding: 10px;
-            background-color: var(--input-bg-color);
-            border: 2px solid var(--border-color);
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
             border-radius: 5px;
-            font-size: 1rem;
-            color: var(--accent-color);
         }
-
-        .contact button {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            transition: background-color 0.3s;
+        button:hover {
+            background: #0056b3;
         }
-
-        .contact button:hover {
-            background-color: var(--hover-color);
-        }
-
-        /* Footer */
         footer {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
+            background: #333;
+            color: white;
             padding: 20px;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 1rem;
+            margin-top: 20px;
         }
     </style>
 </head>
-
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <h1>Studio Architettura & Design</h1>
-            </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Chi Siamo</a></li>
-                <li><a href="#projects">Progetti</a></li>
-                <li><a href="#values">I Nostri Valori</a></li>
-                <li><a href="#contact">Contatti</a></li>
-            </ul>
-        </nav>
+        <h1>Benvenuti nel Nostro Studio di Architettura e Design</h1>
+        <p>Creiamo spazi unici e innovativi per migliorare la qualità della vita.</p>
     </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Progettare per un Futuro Sostenibile</h2>
-            <p>Design innovativo, soluzioni efficienti ed ecologiche per edifici che rispettano l'ambiente e migliorano la qualità della vita.</p>
-            <a href="#contact" class="cta-button">Contattaci</a>
-        </div>
+    <nav>
+        <ul>
+            <li><a href="#about">Chi Siamo</a></li>
+            <li><a href="#services">Servizi</a></li>
+            <li><a href="#projects">Progetti</a></li>
+            <li><a href="#contact">Contatti</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>Chi Siamo</h2>
+        <p>Il nostro studio è specializzato in soluzioni di design innovative e sostenibili.</p>
     </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Chi Siamo</h2>
-            <p>Il nostro studio è composto da architetti e designer impegnati nella creazione di spazi funzionali ed estetici, utilizzando materiali eco-sostenibili e tecniche innovative per ridurre l'impatto ambientale. Ogni progetto è pensato per migliorare l'efficienza energetica e promuovere la sostenibilità.</p>
-        </div>
+    <section id="services">
+        <h2>Servizi</h2>
+        <p>Offriamo progettazione architettonica, interior design e consulenza tecnica.</p>
     </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Progetti Realizzati</h2>
-            <div class="project-gallery">
-                <div class="project-item">
-                    <img src="images/project1.jpg" alt="Progetto Sostenibile 1">
-                    <h3>Edificio Residenziale Green</h3>
-                    <p>Un progetto che integra tecnologie per la produzione di energia solare e l'uso di materiali naturali a basso impatto ambientale.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/project2.jpg" alt="Progetto Sostenibile 2">
-                    <h3>Centro Commerciale Eco-Friendly</h3>
-                    <p>Un centro commerciale che riduce il consumo energetico grazie all'uso di sistemi di riscaldamento e raffreddamento geotermici.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/project3.jpg" alt="Progetto Sostenibile 3">
-                    <h3>Uffici a Basso Impatto Ambientale</h3>
-                    <p>Design innovativo per spazi di lavoro che favoriscono l'efficienza energetica e il benessere dei dipendenti.</p>
-                </div>
-            </div>
-        </div>
+    <section id="projects">
+        <h2>Progetti</h2>
+        <p>Esplora i nostri lavori più recenti e lasciati ispirare dalle nostre creazioni.</p>
+        <button onclick="window.location.href='descrizione_progetto.html'">Visualizza Descrizione del Progetto</button>
+        <button onclick="window.location.href='progetto_rete_cisco.pdf'">Scarica Progetto Rete Cisco</button>
     </section>
-
-    <section id="values" class="values">
-        <div class="container">
-            <h2>I Nostri Valori</h2>
-            <div class="values-list">
-                <div class="value-item">
-                    <h3>Sostenibilità</h3>
-                    <p>Adottiamo pratiche che riducono l'impatto ambientale, dalla scelta dei materiali all'efficienza energetica dei nostri edifici.</p>
-                </div>
-                <div class="value-item">
-                    <h3>Innovazione</h3>
-                    <p>Utilizziamo tecnologie all'avanguardia per creare progetti che anticipano le esigenze del futuro e che rispondono ai cambiamenti climatici.</p>
-                </div>
-                <div class="value-item">
-                    <h3>Efficienza Energetica</h3>
-                    <p>Ogni progetto è studiato per ridurre al minimo il consumo energetico, garantendo al tempo stesso il comfort e la funzionalità degli spazi.</p>
-                </div>
-            </div>
-        </div>
+    <section id="contact">
+        <h2>Contatti</h2>
+        <p>Contattaci per una consulenza personalizzata.</p>
     </section>
-
-    <section id="contact" class="contact">
-        <h2>Contattaci</h2>
-        <form>
-            <input type="text" placeholder="Nome" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Messaggio" rows="4" required></textarea>
-            <button type="submit">Invia</button>
-        </form>
-    </section>
-
     <footer>
-        <p>&copy; 2025 Studio Architettura & Design - Tutti i diritti riservati</p>
+        <p>&copy; 2025 Studio di Architettura e Design. Tutti i diritti riservati.</p>
     </footer>
-
 </body>
-
 </html>
